@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package WordPress
- * @subpackage theme
+ * @subpackage Art & Dance Lab
  * @since 1.0.0
  */
 

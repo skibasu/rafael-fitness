@@ -1,0 +1,33 @@
+.section-schedule {
+    padding: 56px 0 56px;
+
+    &__day-title {
+        text-align: center;
+        text-transform: uppercase;
+        background: black;
+        padding: 10px 0;
+        color: white;
+        margin-bottom: 8px;
+    }
+    &__hours,
+    &__dance {
+        font-size: 20px;
+        padding: 10px 0;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+    }
+    &__hours-col {
+        background: #cdcdcd;
+        margin-bottom: 8px;
+    }
+    &__dance-col {
+        margin-bottom: 8px;
+        background: rgb(99, 198, 95);
+        background: linear-gradient(
+            90deg,
+            rgba(99, 198, 95, 1) 0%,
+            rgba(25, 160, 235, 1) 100%
+        );
+    }
+}

@@ -1,0 +1,23 @@
+.section-pricings {
+    padding: 56px 0 56px;
+    &__row {
+        margin-bottom: 12px;
+        margin: 0 -6px 12px -6px;
+    }
+    &__col-info,
+    &__col-price {
+        font-size: 20px;
+        padding: 0 6px;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+    }
+    &__col-info-inner {
+        padding: 25px 0;
+        background: #cdcdcd;
+    }
+    &__col-price-inner {
+        padding: 25px 0;
+        background: #818181;
+    }
+}

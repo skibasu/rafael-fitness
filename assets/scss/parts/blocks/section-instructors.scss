@@ -1,0 +1,67 @@
+.section-instructors {
+    &__card {
+        margin-bottom: 16px;
+        .col {
+            background: rgb(246, 87, 8);
+            background: linear-gradient(
+                90deg,
+                rgba(246, 87, 8, 1) 0%,
+                rgba(183, 73, 162, 1) 38%,
+                rgba(236, 10, 30, 1) 100%
+            );
+        }
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+            text-align: right;
+            .col {
+                background: rgb(167, 8, 246);
+                background: linear-gradient(
+                    90deg,
+                    rgba(167, 8, 246, 1) 0%,
+                    rgba(73, 95, 183, 1) 38%,
+                    rgba(10, 174, 236, 1) 100%
+                );
+            }
+        }
+        &:nth-child(3n) {
+            .col {
+                background: rgb(181, 246, 8);
+                background: linear-gradient(
+                    90deg,
+                    rgba(181, 246, 8, 1) 0%,
+                    rgba(73, 183, 82, 1) 38%,
+                    rgba(227, 236, 10, 1) 100%
+                );
+            }
+        }
+    }
+    &__picture-col {
+        width: 350px;
+        height: 350px;
+        flex: 0 0 350px;
+    }
+    &__card-picture {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__description-col {
+        color: white;
+        padding: 40px;
+    }
+    &__card-title {
+        font-size: 32px;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        margin-bottom: 35px;
+    }
+    &__card-description {
+        text-align: left;
+        padding-left: 35px;
+    }
+}

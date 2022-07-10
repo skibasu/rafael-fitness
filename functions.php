@@ -5,14 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage theme
+ * @subpackage Art & Dance Lab
  * @since 1.0.0
  */
 
 /* global setting page  */
 require_once( get_template_directory() . '/includes/acf-settings-page/acf-settings-page.php' );
 
-/* theme scripts and styles */
+/* Art & Dance Lab scripts and styles */
 require_once( get_template_directory() . '/includes/scripts-styles/scripts-styles.php' );
 
 /* activate menus */
@@ -35,6 +35,9 @@ require_once( get_template_directory() . '/includes/cf7-settings/cf7-settings.ph
 
 /* acf blocks */
 require_once( get_template_directory() . '/includes/acf-blocks/acf-blocks.php' );
+
+/* images function */
+require_once( get_template_directory() . '/includes/images/images.php' );
 
 
 

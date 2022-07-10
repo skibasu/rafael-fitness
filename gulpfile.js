@@ -1,23 +1,22 @@
 // Initialize modules
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
-const { src, dest, watch, series, parallel } = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp")
 
 // Importing all the Gulp-related packages we want to use
 
-const sourcemaps = require("gulp-sourcemaps");
-const sass = require("gulp-sass");
-const rename = require("gulp-rename");
-const browserify = require("browserify");
-const babelify = require("babelify");
-const source = require("vinyl-source-stream");
-const buffer = require("vinyl-buffer");
+const sourcemaps = require("gulp-sourcemaps")
+const sass = require("gulp-sass")
+const rename = require("gulp-rename")
+const browserify = require("browserify")
+const babelify = require("babelify")
+const source = require("vinyl-source-stream")
+const buffer = require("vinyl-buffer")
+const uncss = require("gulp-uncss")
+const uglify = require("gulp-uglify")
+const autoprefixer = require("gulp-autoprefixer")
 
-const uglify = require("gulp-uglify");
-const autoprefixer = require("gulp-autoprefixer");
-
-
-const browserSync = require("browser-sync").create();
-const { stream, reload } = browserSync;
+const browserSync = require("browser-sync").create()
+const { stream, reload } = browserSync
 
 // files
 
@@ -38,15 +37,14 @@ const files = {
 
     // php
     phpAllFiles: "./**/*.php",
-
-};
+}
 
 // Browser sync task
 const browserSyncTask = () =>
     browserSync.init({
-        proxy: "http://localhost:8888/groen",//enter proxy adress
-        notify: true
-    });
+        proxy: "http://artanddancelab.local/",
+        notify: true,
+    })
 // Sass task
 
 const scssTask = () => {
@@ -55,28 +53,29 @@ const scssTask = () => {
         .pipe(
             sass({
                 errLogToConsole: true,
-                outputStyle: "compressed"
+                outputStyle: "compressed",
             })
         )
         .on("error", console.error.bind(console))
         .pipe(
             autoprefixer({
-                cascade: false
+                cascade: false,
             })
         )
         .pipe(rename({ suffix: ".min" }))
         .pipe(sourcemaps.write("."))
+
         .pipe(dest(files.cssDistPath))
-        .pipe(stream());
-};
+        .pipe(stream())
+}
 
 // JS task
 
-const jsTask = d => {
-    files.js__FILES.map(entry =>
+const jsTask = (d) => {
+    files.js__FILES.map((entry) =>
         browserify({ entries: [files.jsSrcPath + entry] })
             .transform(babelify, {
-                presets: ["@babel/preset-env"]
+                presets: ["@babel/preset-env"],
             })
             .bundle()
             .pipe(source(entry))
@@ -86,25 +85,33 @@ const jsTask = d => {
             .pipe(uglify())
             .pipe(sourcemaps.write("."))
             .pipe(dest(files.jsDistPath))
-    );
-    d();
-};
-
+    )
+    d()
+}
+// Uncss Task
+const unscssTask = () => {
+    return src("./_dist/css/style.min.css")
+        .pipe(
+            uncss({
+                html: ["http://artanddancelab.local"],
+            })
+        )
+        .pipe(dest("./_dist/css/uncss.style.min.css"))
+}
 
 // Watch task
 
 const watchTask = () => {
-    watch(files.styleAllFiles, scssTask);
-    watch(files.jsAllFiles, jsTask).on("change", reload);
-    watch(files.phpAllFiles).on("change", reload);
-
-};
+    watch(files.styleAllFiles, scssTask)
+    watch(files.jsAllFiles, jsTask).on("change", reload)
+    watch(files.phpAllFiles).on("change", reload)
+}
 
 // Default task
 
 exports.default = series(
-
     parallel(scssTask, jsTask),
 
     parallel(watchTask, browserSyncTask)
-);
+)
+exports.uncss = parallel(unscssTask)

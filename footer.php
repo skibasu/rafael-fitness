@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage theme
+ * @subpackage Art & Dance Lab
  * @since 1.0.0
  */
 

@@ -1,3 +1,16 @@
-@import "helpers/init";
-@import "components/init";
-@import "parts/init";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+@import "./helpers/init";
+@import "./parts/init";
+@import "./components/init";
+
+.slick-track {
+    display: flex !important;
+    align-items: stretch !important;
+}
+.slick-slide {
+    height: auto !important;
+    flex: 1 !important;
+}
