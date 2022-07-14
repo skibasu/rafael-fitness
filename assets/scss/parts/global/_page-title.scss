@@ -1,7 +1,13 @@
 .page-title {
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 66px;
+    margin-bottom: 25px;
+    @include mq(md) {
+        margin-bottom: 40px;
+    }
+    @include mq(lg) {
+        margin-bottom: 66px;
+    }
     &__left-gradient {
         flex: 1 1 auto;
         background: rgb(232, 41, 189);
@@ -12,8 +18,15 @@
         );
     }
     &__text {
+        margin: 0;
         flex: 0 0 auto;
-        padding: 0 70px;
+        padding: 0 15px;
+        @include mq(md) {
+            padding: 0 30px;
+        }
+        @include mq(lg) {
+            padding: 0 70px;
+        }
     }
     &__right-gradient {
         flex: 1 1 auto;

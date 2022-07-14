@@ -2,7 +2,7 @@
 $title = get_field('title');
 if(have_rows('pricings')):
 ?>
-<section class="section-pricings">
+<section class="section-pricings" id="cennik">
    <div class="container">
   <?php if($title): ?> 
       <div class="page-title">

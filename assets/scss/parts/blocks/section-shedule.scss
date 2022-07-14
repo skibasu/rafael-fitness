@@ -1,6 +1,10 @@
 .section-schedule {
-    padding: 56px 0 56px;
-
+    &__day {
+        margin-bottom: 40px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
     &__day-title {
         text-align: center;
         text-transform: uppercase;

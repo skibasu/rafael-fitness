@@ -8,5 +8,6 @@ export const setNewsSlider = () => {
         dots: true,
         infinite: true,
         adaptiveHeight: false,
+        dots: false,
     })
 }

@@ -6,7 +6,7 @@ if( $logo ):
 ?>
 
 <div class="page-logo position-absolute" style="width:180px">
-    <a class="page-logo__link " href="<?php echo get_home_url(); ?>" style="display: block;">
+    <a class="page-logo__link d-block" href="<?php echo get_home_url(); ?>">
     <?php echo $logo; ?>
     </a>
 </div>

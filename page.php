@@ -12,9 +12,9 @@
 get_header();
 the_post();
 ?>
-	<main class="page-content">
-      <?php get_template_part( 'parts/components/hero' );?>
-      <?php the_content(); ?>
+	<main class="page-content gsap-main">
+  <?php get_template_part( 'parts/components/hero' );?>
+  <?php the_content(); ?>
 	</main>
 <?php
 get_footer();

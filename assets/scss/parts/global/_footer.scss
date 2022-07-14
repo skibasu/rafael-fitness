@@ -1,0 +1,9 @@
+footer {
+    background: $black;
+    color: rgba($white, 0.67);
+    padding: 20px 0 15px;
+    font-size: 13px;
+    .page-logo {
+        filter: grayscale(1);
+    }
+}

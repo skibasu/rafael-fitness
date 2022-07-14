@@ -8,6 +8,7 @@ function activate_support() {
  
         add_image_size( 'hero-picture', 1920, 1080);
     add_image_size( 'medium-picture', 416, 525);
+    add_image_size( 'full-mobile', 768, 768);
      add_image_size( 'portrait', 350, 350);
 
    

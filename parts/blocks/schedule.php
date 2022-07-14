@@ -2,7 +2,7 @@
 if( have_rows('schedule') ): 
 $title = get_field('title');
 ?>
-<section class="section-schedule">
+<section class="section-schedule" id="grafik">
    <div class="container">
    <?php if ($title): ?> 
 
@@ -27,12 +27,12 @@ $title = get_field('title');
                      $hours_to = get_sub_field('hours_to');
                      $dance = get_sub_field('dance');
                   ?>
-                  <div class="col col-4 section-schedule__hours-col  section-schedule__hours-col">
+                  <div class="col col-12 col-md-4 section-schedule__hours-col  section-schedule__hours-col">
                      <div class="section-schedule__hours">
                         <span><?php echo $hours_from;?></span> : <span><?php echo $hours_to;?></span>
                      </div>
                   </div>
-                  <div class="col col-8 section-schedule__dance-col">
+                  <div class="col col-12 col-md-8 section-schedule__dance-col">
                      <div class="section-schedule__dance">
                         <?php echo $dance;?>
                      </div>

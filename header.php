@@ -13,12 +13,15 @@
 
 get_template_part('parts/global/html-head');
 ?>
-<body <?php body_class(); ?> >
+<body <?php body_class('overflow-hidden, w-100'); ?> >
 
-<div id="page position-relative">
-	<header id="header" class="header">
-           <?php  wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => "page-menu" ) ); ?>
-	</header>
+<div id="page" class="position-relative w-100 overflow-hidden">
+   <?php get_template_part( 'parts/components/header-desktop' );?>
+   <?php get_template_part( 'parts/components/header-mobile' );?>
+   <?php get_template_part( 'parts/components/menu-mobile' );?>
+   <?php get_template_part( 'parts/components/overlay' );?>
+     
+
 
 
 	

@@ -1,14 +1,26 @@
 .section-hero {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
     .page-logo {
-        left: 0;
-        top: 0;
-        z-index: 2;
+        left: 20px;
+        top: 20px;
+        z-index: 11;
     }
     &__full-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 110% !important;
+        height: 110% !important;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
         }
     }
 }

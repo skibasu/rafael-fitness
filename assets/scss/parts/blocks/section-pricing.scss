@@ -1,16 +1,20 @@
 .section-pricings {
-    padding: 56px 0 56px;
     &__row {
-        margin-bottom: 12px;
         margin: 0 -6px 12px -6px;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__col-info,
     &__col-price {
-        font-size: 20px;
+        font-size: 16px;
         padding: 0 6px;
         text-transform: uppercase;
         text-align: center;
         color: white;
+        @include mq(md) {
+            font-size: 20px;
+        }
     }
     &__col-info-inner {
         padding: 25px 0;
